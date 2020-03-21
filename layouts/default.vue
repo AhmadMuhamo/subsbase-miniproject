@@ -51,12 +51,12 @@ export default {
         {
           icon: 'mdi-chart-line',
           title: 'Stocks',
-          to: '/'
+          to: '/stocks'
         },
         {
           icon: 'mdi-cash-multiple',
           title: 'Forex',
-          to: '/inspire'
+          to: '/fx'
         }
       ],
       miniVariant: false,
