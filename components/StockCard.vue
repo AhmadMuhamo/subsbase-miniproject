@@ -7,11 +7,11 @@
         </span>
       </div>
       <div class="stock-details_data">
-        <span><strong>Open:</strong> {{ stock.open }}</span>
-        <span><strong>Close:</strong> {{ stock.prevClose }}</span>
-        <span><strong>High:</strong> {{ stock.high }}</span>
-        <span><strong>Low:</strong> {{ stock.low }}</span>
-        <span><strong>Volume:</strong> {{ stock.volume }}</span>
+        <span> <strong>Open:</strong> {{ stock.open }} </span>
+        <span> <strong>Close:</strong> {{ stock.prevClose }} </span>
+        <span> <strong>High:</strong> {{ stock.high }} </span>
+        <span> <strong>Low:</strong> {{ stock.low }} </span>
+        <span> <strong>Volume:</strong> {{ stock.volume }} </span>
       </div>
     </v-card-text>
     <v-spacer />
@@ -25,7 +25,12 @@
 <script>
 export default {
   name: 'StockCard',
-  props: ['stock'],
+  props: {
+    stock: {
+      required: true,
+      type: Object
+    }
+  },
   methods: {
     stockOpenClass(stk) {
       return stk.prevClose > stk.open

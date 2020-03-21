@@ -6,7 +6,7 @@ export default {
   },
   mutations: {
     addStock(state, stock) {
-      state.stocks = { ...state.stocks }
+      !state.stocks ? (state.stocks = {}) : (state.stocks = { ...state.stocks })
       state.stocks[stock.symbol] = stock
       if (process.browser) {
         localStorage.setItem('stocks', JSON.stringify(state.stocks))

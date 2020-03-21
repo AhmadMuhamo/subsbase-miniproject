@@ -25,7 +25,7 @@
       </v-card>
     </v-flex>
     <br />
-    <v-flex row>
+    <v-flex v-if="stocks" row>
       <StockCard v-for="(stk, index) in stocks" :key="index" :stock="stk" />
     </v-flex>
   </v-layout>
@@ -61,7 +61,7 @@ export default {
     }
   },
   async created() {
-    if (!Object.keys(this.stocks).length) {
+    if (!this.stocks || !Object.keys(this.stocks).length) {
       await this.fetchStocks('MSFT')
     }
   },
