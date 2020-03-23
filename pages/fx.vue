@@ -98,7 +98,7 @@ export default {
         }
         if (obj) {
           for (const fx in obj) {
-            this.chartData.labels.push(obj[fx][`${obj[fx].from}=${obj[fx].to}`])
+            this.chartData.labels.push(`${obj[fx].from}-${obj[fx].to}`)
             this.chartData.values.push(obj[fx].rate)
           }
         }
