@@ -6,11 +6,17 @@ export default {
   },
   mutations: {
     addForex(state, rate) {
-      !state.forex ? (state.forex = {}) : (state.forex = { ...state.forex })
+      !state.forex
+        ? (state.forex = JSON.parse(localStorage.getItem('forex')) || {})
+        : (state.forex = { ...state.forex })
       state.forex[`${rate.from}-${rate.to}`] = rate
       if (process.browser) {
         localStorage.setItem('forex', JSON.stringify(state.forex))
       }
+    },
+    removeForex(state) {
+      state.forex = undefined
+      localStorage.removeItem('forex')
     }
   },
   getters: {

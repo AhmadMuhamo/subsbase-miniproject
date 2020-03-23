@@ -6,11 +6,17 @@ export default {
   },
   mutations: {
     addStock(state, stock) {
-      !state.stocks ? (state.stocks = {}) : (state.stocks = { ...state.stocks })
+      !state.stocks
+        ? (state.stocks = JSON.parse(localStorage.getItem('stocks')) || {})
+        : (state.stocks = { ...state.stocks })
       state.stocks[stock.symbol] = stock
       if (process.browser) {
         localStorage.setItem('stocks', JSON.stringify(state.stocks))
       }
+    },
+    removeStocks(state) {
+      state.stocks = undefined
+      localStorage.removeItem('stocks')
     }
   },
   getters: {

@@ -61,7 +61,7 @@ export default {
         font-size: 1.5rem;
         font-weight: 700;
         &.green-text {
-          color: green;
+          color: lighten(green, 20%);
         }
         &.red-text {
           color: red;

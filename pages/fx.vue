@@ -56,18 +56,21 @@ export default {
   data() {
     return {
       currencyFrom: null,
-      currencyTo: null
+      currencyTo: null,
+      loading: false
     }
   },
   computed: {
-    ...mapGetters(['forex', 'loading'])
+    ...mapGetters(['forex'])
   },
   async created() {
     if (!this.forex || !Object.keys(this.forex).length) {
+      this.loading = true
       await this.getExchangeRate({
         from: 'USD',
         to: 'EGP'
       })
+      this.loading = false
     }
   },
   methods: {
