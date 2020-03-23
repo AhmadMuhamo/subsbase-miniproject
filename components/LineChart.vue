@@ -7,7 +7,8 @@ export default {
       type: Object,
       default: null
     },
-    options: { type: Object, default: null }
+    options: { type: Object, default: null },
+    label: { type: String, default: 'Chart Label' }
   },
   computed: {
     chartData() {
@@ -15,7 +16,7 @@ export default {
         labels: this.dataToDraw.labels,
         datasets: [
           {
-            label: 'Stocks',
+            label: this.label,
             backgroundColor: '#1976d2',
             data: this.dataToDraw.values
           }

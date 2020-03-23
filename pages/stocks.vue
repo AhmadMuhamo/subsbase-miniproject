@@ -41,6 +41,7 @@
         <line-chart
           v-if="chartData.values.length > 2"
           :dataToDraw="chartData"
+          label="Stocks"
         ></line-chart>
         <div v-else>
           <h2>Add more stocks to view statistics</h2>
@@ -133,15 +134,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.chart-container {
-  background-color: #fff;
-  width: 100%;
-  margin-top: 2rem;
-  div {
-    color: #000;
-    text-align: center;
-    margin: 2rem auto;
-  }
-}
-</style>

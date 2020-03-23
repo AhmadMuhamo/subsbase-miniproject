@@ -65,3 +65,18 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.container {
+  max-width: 100%;
+}
+.chart-container {
+  background-color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+  div {
+    color: #000;
+    text-align: center;
+    margin: 2rem auto;
+  }
+}
+</style>
